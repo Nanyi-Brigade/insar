@@ -12,4 +12,4 @@ print(im_data)
 a_real = im_data.real
 a_imag = im_data.imag
 amplitude = abs(im_data) #振幅
-phase = np.arctan2(a_imag,a_real)  #相位
+phase = np.arctan2(a_imag,a_real) #相位
