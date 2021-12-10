@@ -1,5 +1,5 @@
-from .sarpy.read import readSAR
-from .sarpy.local_velocity import readEOFParams
+from sarpy.read import readSAR
+from sarpy.local_velocity import readEOFParams
 
 
 tif_path = "C:/Users/张少/Desktop/11.tiff"

@@ -2,3 +2,5 @@
 *.tiff
 *.eof
 *.xml
+local_data
+__pycache__

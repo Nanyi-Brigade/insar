@@ -8,7 +8,7 @@ import xml.dom.minidom
 import time
 
 class Sar_cls():
-    
+
     a = 6378137 
     b = 6356752.314 
         
@@ -113,4 +113,20 @@ class Sar_cls():
             if abs(result_1[2][0] - self.result[2][0]) <= 0.0001:
                 #print(self.result)
                 return self.result
+
+      #读取头文件中的prf,psr数据  
+    def read_prf_psr(self , fileroad):
         
+        dom = xml.dom.minidom.parse(fileroad)  # 打开XML文件
+        collection = dom.documentElement  # 获取元素对象
+        obj_prf = collection.getElementsByTagName("prf")[0]  # 获取标签名信息
+        obj_psr = collection.getElementsByTagName("rangeSamplingRate")[0]
+        
+        obj_fir_LineTime = collection.getElementsByTagName("firstLineSensingTime")[0]
+        obj_last_LineTime = collection.getElementsByTagName("lastLineSensingTime")[0]
+        
+        self.fir_LineTime = obj_fir_LineTime.childNodes[0].data
+        self.last_LineTime = obj_last_LineTime.childNodes[0].data 
+        self.prf = float(obj_prf.childNodes[0].data)
+        self.psr = float(obj_psr.childNodes[0].data)
+   
