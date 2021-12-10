@@ -5,7 +5,12 @@
 #给定某一像素坐标（r，c），根据SAR参数头文件计算对应的斜距R
 def cal_R():
     #万灿
+    a = 1
+    b = 2
+    c = a + b
+    print(f"ans={c}")
     pass
+
 #通过DEM计算每一像素对应的大地高
 def cal_h(dem):
     """
